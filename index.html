@@ -4,7 +4,7 @@
 <head>
     <title>Turing Machine Game Helper</title>
     <style>
-        .container {
+        /* .container {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -13,13 +13,14 @@
         .container button,
         .container img {
             margin-bottom: 10px
-        }
+        } */
 
         body {
             background-color: lightgreen;
         }
 
         h1 {
+            font-family: Arial, Helvetica, sans-serif;
             color: black;
             text-align: center;
         }
@@ -32,34 +33,51 @@
 </head>
 
 <body>
-    <h1>Turing Machine Game Helper</h2>
+    <h1>Turing Machine Game Helper</h1>
 
-        <p>JavaScript code blocks are written between { and }</p>
 
-        <div class="container">
-            <button type="button" onclick="displayJared()">Click Me for Jared</button>
-            <button type="button" onclick="displayFreezer()">Click Me for Freezer</button>
+    <div class="container">
+        <button type="button" onclick="displayJared()">Click Me for Jared</button>
+        <button type="button" onclick="displayFreezer()">Click Me for Freezer</button>
+        <br>
+        <img id="image" style="width:100px">
 
-            <img id="demo1" style="width:100px">
-            <img id="demo2" style="width:100px">
-            <p id="text"></p>
-        </div>
+        <br>
+        <br>
+        <label id="suitlabel" for="suits">Choose a suit:</label>
+        <select name="suits" id="suits">
+            <option value="hearts">Hearts</option>
+            <option value="diamonds">Diamonds</option>
+            <option value="spades">Spades</option>
+            <option value="clubs">Clubs</option>
+        </select>
 
-        <script>
-            function displayJared() {
-                let x = 4204;
-                const image = document.getElementById("demo1")
-                image.src = "images\\IMG_" + x + ".jpg";
-                document.getElementById("text").innerHTML = image.src;
-            }
+        <p id="text"></p>
 
-            function displayFreezer() {
-                let y = 656;
-                const image = 
-                document.getElementById("demo2").src = "images\\IMG_" + y + ".png";
-                document.getElementById("text").innerHTML = document.getElementById("demo2").src
-            }
-        </script>
+
+    </div>
+
+    <script>
+        function displayJared() {
+            let x = 4204;
+            const image = document.getElementById("image")
+            image.src = "images\\IMG_" + x + ".jpg";
+            document.getElementById("text").innerHTML = image.src;
+        }
+
+        function displayFreezer() {
+            let y = 656;
+            const image = document.getElementById("image")
+            image.src = "images\\IMG_" + y + ".png";
+            document.getElementById("text").innerHTML = document.getElementById("image").src;
+        }
+
+        function dropDownValue() {
+            let dropdown = document.getElementById("suits")
+            value = dropdown.value;
+            document.getElementById("text").innerHTML = dropdown.options[dropdown.selectedIndex].text;
+        }
+    </script>
 </body>
 
 </html>
