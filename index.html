@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Turing Machine Game Helper</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .container button,
+        .container img {
+            margin-bottom: 10px
+        }
+
+        body {
+            background-color: lightgreen;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        #text {
+            font-family: Verdana;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Turing Machine Game Helper</h2>
+
+        <p>JavaScript code blocks are written between { and }</p>
+
+        <div class="container">
+            <button type="button" onclick="displayJared()">Click Me for Jared</button>
+            <button type="button" onclick="displayFreezer()">Click Me for Freezer</button>
+
+            <img id="demo1" style="width:100px">
+            <img id="demo2" style="width:100px">
+            <p id="text"></p>
+        </div>
+
+        <script>
+            function displayJared() {
+                let x = 4204;
+                const image = document.getElementById("demo1")
+                image.src = "images\\IMG_" + x + ".jpg";
+                document.getElementById("text").innerHTML = image.src;
+            }
+
+            function displayFreezer() {
+                let y = 656;
+                const image = 
+                document.getElementById("demo2").src = "images\\IMG_" + y + ".png";
+                document.getElementById("text").innerHTML = document.getElementById("demo2").src
+            }
+        </script>
+</body>
+
+</html>
