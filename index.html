@@ -44,7 +44,8 @@
 
         <br>
         <br>
-        <label id="suitlabel" for="suits">Choose a suit:</label>
+        <label id="suitlabel" for="suits">Show me the</label>
+        <input id="cardInput"> of
         <select name="suits" id="suits">
             <option value="hearts">Hearts</option>
             <option value="diamonds">Diamonds</option>
@@ -52,32 +53,42 @@
             <option value="clubs">Clubs</option>
         </select>
 
-        <button type="button" onclick="dropDownValue()">Click Me for suits value</button>
+        <button type="button" onclick="showCard()">Run</button>
+
+        <br>
+
+        <img id="cardImage" style="width:100px">
 
         <p id="text"></p>
-
-
     </div>
 
     <script>
         function displayJared() {
             let x = 4204;
-            const image = document.getElementById("image")
+            let image = document.getElementById("image")
             image.src = "images\\IMG_" + x + ".jpg";
-            document.getElementById("text").innerHTML = image.src;
+            // document.getElementById("text").innerHTML = image.src;
         }
 
         function displayFreezer() {
             let y = 656;
-            const image = document.getElementById("image")
+            let image = document.getElementById("image")
             image.src = "images\\IMG_" + y + ".png";
-            document.getElementById("text").innerHTML = document.getElementById("image").src;
+            // document.getElementById("text").innerHTML = document.getElementById("image").src;
         }
 
-        function dropDownValue() {
-            let dropdown = document.getElementById("suits")
-            value = dropdown.value;
-            document.getElementById("text").innerHTML = dropdown.options[dropdown.selectedIndex].text;
+        function showCard() {
+            let cardInput = document.getElementById("cardInput");
+            let dropdown = document.getElementById("suits");
+            let outputImage = document.getElementById("cardImage");
+
+            suitValue = dropdown.value;
+            cardValue = cardInput.value;
+
+            let filename = "images\\playingcards\\"+ cardValue + "_of_" + suitValue + ".png";
+
+            outputImage.src = filename;
+            // document.getElementById("text").innerHTML = dropdown.options[dropdown.selectedIndex].text;
         }
     </script>
 </body>
